@@ -76,20 +76,20 @@ async def send_movie_updates(bot, file_name, caption, file_id):
             return 
         processed_movies.add(movie_name)    
         poster_url = await get_imdb(movie_name)
-        caption_message = f"#New_File_Added ✅\n\nFile_Name:- <code>{movie_name}</code>\n\nLanguage:- {language}\n\nQuality:- {quality}" 
+        caption_message = f"#𝑵𝑬𝑾_𝑭𝑰𝑳𝑬_𝑨𝑫𝑫𝑬𝑫 ✅️\n\n➩ 𝙁𝙞𝙡𝙚 𝙉𝙖𝙢𝙚: <code>{movie_name}</code>\n\n➩ 𝙇𝙖𝙣𝙜𝙪𝙖𝙜𝙚: {language}\n\n ➩ 𝙋𝙞𝙭𝙚𝙡: {quality}" 
         search_movie = movie_name.replace(" ", '-')
         movie_update_channel = await db.movies_update_channel_id()    
         btn = [[
-            InlineKeyboardButton('📂 ɢᴇᴛ ғɪʟᴇ 📂', url=f'https://telegram.me/{temp.U_NAME}?start=getfile-{search_movie}')
+            InlineKeyboardButton('📂 𝙂𝙚𝙩 𝙔𝙤𝙪𝙧 𝙁𝙞𝙡𝙚 𝙁𝙧𝙤𝙢 𝙃𝙚𝙧𝙚 📂', url=f'https://telegram.me/{temp.U_NAME}?start=getfile-{search_movie}')
         ],[
-            InlineKeyboardButton('♻️ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ♻️', url=f'https://t.me/JISSHU_BOTS')
+            InlineKeyboardButton('♻️ 𝙅𝙤𝙞𝙣 𝙈𝙖𝙞𝙣 𝘾𝙝𝙖𝙣𝙣𝙚𝙡 ♻️', url=f'https://t.me/ACXBOTZ_UPDATE')
         ]]
         reply_markup = InlineKeyboardMarkup(btn)
         if poster_url:
             await bot.send_photo(movie_update_channel if movie_update_channel else MOVIE_UPDATE_CHANNEL, 
                                  photo=poster_url, caption=caption_message, reply_markup=reply_markup)
         else:
-            no_poster = "https://telegra.ph/file/88d845b4f8a024a71465d.jpg"
+            no_poster = "https://files.catbox.moe/398uj3.jpg"
             await bot.send_photo(movie_update_channel if movie_update_channel else MOVIE_UPDATE_CHANNEL, 
                                  photo=no_poster, caption=caption_message, reply_markup=reply_markup)  
     except Exception as e:
