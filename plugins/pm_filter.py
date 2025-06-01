@@ -43,7 +43,7 @@ async def pm_search(client, message):
             return await auto_filter(client, message)
         await auto_filter(client, message)
     else:
-        await message.reply_text("<b><i>ɪ ᴀᴍ ɴᴏᴛ ᴡᴏʀᴋɪɴɢ ʜᴇʀᴇ. ꜱᴇᴀʀᴄʜ ᴍᴏᴠɪᴇꜱ ɪɴ ᴏᴜʀ ᴍᴏᴠɪᴇ ꜱᴇᴀʀᴄʜ ɢʀᴏᴜᴘ.</i></b>", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ᴍᴏᴠɪᴇ ꜱᴇᴀʀᴄʜ ɢʀᴏᴜᴘ ", url='https://t.me/JisshuMovieZone')]]))
+        await message.reply_text("<b><i>ɪ ᴀᴍ ɴᴏᴛ ᴡᴏʀᴋɪɴɢ ʜᴇʀᴇ. ꜱᴇᴀʀᴄʜ ᴍᴏᴠɪᴇꜱ ɪɴ ᴏᴜʀ ᴍᴏᴠɪᴇ ꜱᴇᴀʀᴄʜ ɢʀᴏᴜᴘ.</i></b>", reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("📝 ᴍᴏᴠɪᴇ ꜱᴇᴀʀᴄʜ ɢʀᴏᴜᴘ ", url='https://t.me/MOVIE_SEARCHING_GROUP_ACX')]]))
         
     
 @Client.on_message(filters.group & filters.text & filters.incoming)
@@ -180,7 +180,7 @@ async def next_page(bot, query):
         for file_num, file in enumerate(files, start=offset+1):
             links += f"""<b>\n\n{file_num}. <a href=https://t.me/{temp.U_NAME}?start=file_{query.message.chat.id}_{file.file_id}>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}</a></b>"""
     else:
-        btn = [[InlineKeyboardButton(text=f"📁 {get_size(file.file_size)}≽ {formate_file_name(file.file_name)}", url=f'https://telegram.dog/{temp.U_NAME}?start=file_{query.message.chat.id}_{file.file_id}'),]
+        btn = [[InlineKeyboardButton(text=f"📮 {get_size(file.file_size)} ➧ {formate_file_name(file.file_name)}", url=f'https://telegram.dog/{temp.U_NAME}?start=file_{query.message.chat.id}_{file.file_id}'),]
                 for file in files
               ]
     btn.insert(0,[
@@ -312,7 +312,7 @@ async def season_search(client: Client, query: CallbackQuery):
             links += f"""<b>\n\n{file_num}. <a href=https://t.me/{temp.U_NAME}?start=file_{query.message.chat.id}_{file.file_id}>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}</a></b>"""
     else:
         btn = [[
-                InlineKeyboardButton(text=f"🔗 {get_size(file.file_size)}≽ {formate_file_name(file.file_name)}", callback_data=f'cfiles#{reqnxt}#{file.file_id}'),]
+                InlineKeyboardButton(text=f"📮 {get_size(file.file_size)} ➧ {formate_file_name(file.file_name)}", callback_data=f'cfiles#{reqnxt}#{file.file_id}'),]
                    for file in files
               ]
    
@@ -418,7 +418,7 @@ async def year_search(client: Client, query: CallbackQuery):
             links += f"""<b>\n\n{file_num}. <a href=https://t.me/{temp.U_NAME}?start=file_{query.message.chat.id}_{file.file_id}>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}</a></b>"""
     else:
         btn = [[
-                InlineKeyboardButton(text=f"🔗 {get_size(file.file_size)}≽ {formate_file_name(file.file_name)}", callback_data=f'cfiles#{reqnxt}#{file.file_id}'),]
+                InlineKeyboardButton(text=f"📮 {get_size(file.file_size)} ➧ {formate_file_name(file.file_name)}", callback_data=f'cfiles#{reqnxt}#{file.file_id}'),]
                    for file in files
               ]
         
@@ -524,7 +524,7 @@ async def quality_search(client: Client, query: CallbackQuery):
             links += f"""<b>\n\n{file_num}. <a href=https://t.me/{temp.U_NAME}?start=file_{query.message.chat.id}_{file.file_id}>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}</a></b>"""
     else:
         btn = [[
-                InlineKeyboardButton(text=f"🔗 {get_size(file.file_size)}≽ {formate_file_name(file.file_name)}", callback_data=f'cfiles#{reqnxt}#{file.file_id}'),]
+                InlineKeyboardButton(text=f"📮 {get_size(file.file_size)} ➧ {formate_file_name(file.file_name)}", callback_data=f'cfiles#{reqnxt}#{file.file_id}'),]
                    for file in files
               ]
         
@@ -635,7 +635,7 @@ async def lang_search(client: Client, query: CallbackQuery):
             links += f"""<b>\n\n{file_num}. <a href=https://t.me/{temp.U_NAME}?start=file_{query.message.chat.id}_{file.file_id}>[{get_size(file.file_size)}] {' '.join(filter(lambda x: not x.startswith('[') and not x.startswith('@') and not x.startswith('www.'), file.file_name.split()))}</a></b>"""
     else:
         btn = [[
-                InlineKeyboardButton(text=f"🔗 {get_size(file.file_size)}≽ {formate_file_name(file.file_name)}", callback_data=f'cfiles#{reqnxt}#{file.file_id}'),]
+                InlineKeyboardButton(text=f"📮 {get_size(file.file_size)} ➧ {formate_file_name(file.file_name)}", callback_data=f'cfiles#{reqnxt}#{file.file_id}'),]
                    for file in files
               ]
         
@@ -839,7 +839,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('• 𝗖𝗹𝗼𝘀𝗲 •', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(btn)
-        m=await query.message.reply_sticker("CAACAgQAAxkBAAEiLZ9l7VMuTY7QHn4edR6ouHUosQQ9gwACFxIAArzT-FOmYU0gLeJu7x4E") 
+        m=await query.message.reply_sticker("CAACAgUAAxkBAAEBUFdoPLBrC_cjjYKt1S2XK-65OuYmXAACNwsAArT4iFVaZPJf8ldVVjYE") 
         await m.delete()
         await query.message.reply_photo(
             photo=(SUBSCRIPTION),
@@ -849,7 +849,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 	)
     elif query.data == "free":
         buttons = [[
-            InlineKeyboardButton('☆📸 𝙎𝙚𝙣𝙙 𝙨𝙘𝙧𝙚𝙚𝙣𝙨𝙝𝙤𝙩 📸☆', url=f'https://t.me/JisshuDeveloperBot')
+            InlineKeyboardButton('☆📸 𝙎𝙚𝙣𝙙 𝙨𝙘𝙧𝙚𝙚𝙣𝙨𝙝𝙤𝙩 📸☆', url=f'https://t.me/ACX_OWNER_DM_ROBOT')
         ],[
             InlineKeyboardButton('💎 𝗖𝘂𝘀𝘁𝗼𝗺 𝗣𝗹𝗮𝗻 💎', callback_data='other')
         ],[
@@ -1002,11 +1002,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             disable_web_page_preview = True
 	)
     elif query.data == "mydevelopers":
-        await query.answer("Meet the minds behind this bot:\n\n👨‍💻 @JISSHU_BOTS\n👨‍💻 @IM_JISSHU\n👨‍💻 @JOYBOY_ZORO\n👨‍💻 @TG_Anonymous_Official\n\n\n❤️ A big thank you for making this bot awesome!", show_alert=True)
+        await query.answer("Meet the minds behind this bot:\n\n👨‍💻 @THEHYPER_ACX\n\n\n❤️ A big thank you for making this bot awesome!", show_alert=True)
  
     elif query.data == "Source":
         buttons = [[
-            InlineKeyboardButton('Repo', url='https://github.com/Jisshubot/Jisshu-Filter-Bot')
+            InlineKeyboardButton('Repo', url='https://t.me/ACXBOTZ_UPDATE')
         ],[
             InlineKeyboardButton('⋞ ʙᴀᴄᴋ', callback_data='about'),
             InlineKeyboardButton('• ᴄʟᴏsᴇ •', callback_data='close_data')
@@ -1035,7 +1035,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 	      InlineKeyboardButton('⇆ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘs ⇆', url=f'http://t.me/{temp.U_NAME}?startgroup=start')
        ],[
               InlineKeyboardButton('⋞ ʜᴏᴍᴇ', callback_data='features'),
-              InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', url=f'https://t.me/Jisshu_support'),
+              InlineKeyboardButton('sᴜᴘᴘᴏʀᴛ', url=f'https://t.me/DragonByteClan'),
        ]]
        reply_markup = InlineKeyboardMarkup(buttons)
        await client.edit_message_media(
@@ -1469,7 +1469,7 @@ async def auto_filter(client, msg, spoll=False):
         for file_num, file in enumerate(files, start=1):
             links += f"""<b>\n\n{file_num}. <a href=https://t.me/{temp.U_NAME}?start=file_{message.chat.id}_{file.file_id}>[{get_size(file.file_size)}] {formate_file_name(file.file_name)}</a></b>"""
     else:
-        btn = [[InlineKeyboardButton(text=f"🔗 {get_size(file.file_size)}≽ {formate_file_name(file.file_name)}", url=f'https://telegram.dog/{temp.U_NAME}?start=file_{message.chat.id}_{file.file_id}'),]
+        btn = [[InlineKeyboardButton(text=f"📮 {get_size(file.file_size)} ➧ {formate_file_name(file.file_name)}", url=f'https://telegram.dog/{temp.U_NAME}?start=file_{message.chat.id}_{file.file_id}'),]
                for file in files
               ]
     if offset != "":
